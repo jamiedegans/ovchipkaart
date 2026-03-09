@@ -6,11 +6,13 @@ public class driver
 {
     public static void main(String[] args)
     {
-	Scanner sc = new scanner();
 	
-	ovChipkaart ovChipkaart = new ovChipkaart ();
-	deScanner paal = new deScanner();
+	
+	ovChipkaart ovChipkaart = new ovChipkaart(2348, 78.00);
+	
+	Paal paalTrein = new Paal(20.00);
+	Paal paalBus = new Paal(2.00);
 	paal.instapTariefTrein(20.00);
-	sc.close();
+	
     }
 }
