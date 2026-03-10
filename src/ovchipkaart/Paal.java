@@ -3,12 +3,11 @@ package ovchipkaart;
 public class Paal
 {
     double instapTarief = 00.00;
-    //construcore
+    //construcor
     public Paal(double instapTarief) {
 	this.instapTarief = instapTarief;
     }
     
- 
+    
 
 }
-
