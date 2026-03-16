@@ -6,6 +6,8 @@ public class ovChipkaart
     private double saldo;
     private boolean geldig;
     private boolean benIkInAangemeld;
+    
+    
 
     // Constructor
     public ovChipkaart(int kaart, double geld, boolean geldig, boolean benIkInAangemeld)
@@ -17,19 +19,19 @@ public class ovChipkaart
 	this.benIkInAangemeld = false;
     }
 
-    public boolean getgeldig()
+    public boolean getGeldig()
     {
 	return geldig;
     }
 
-    public double getsaldo()
+    public double getSaldo()
     {
 	return saldo;
     }
     
-    public double setsaldo()
+    public void setSaldo(double setSaldo)
     {
-	return saldo;
+	this.saldo = setSaldo;
     }
 
 
