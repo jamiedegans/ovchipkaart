@@ -2,8 +2,8 @@ package ovchipkaart;
 
 public class Paal
 {
-    double instapTarief = 00.00;
-    boolean hebIkGenoegGeld;
+   private  double instapTarief = 00.00;
+   private  boolean hebIkGenoegGeld;
     
     // =================================================//
     // construcor

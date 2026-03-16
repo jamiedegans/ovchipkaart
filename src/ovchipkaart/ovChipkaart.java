@@ -5,7 +5,7 @@ public class ovChipkaart
     private int kaartNummer;
     private double saldo;
     private boolean geldig;
-    private boolean benIkInAangemeld;
+    private boolean benIkAangemeld;
     
     
 
@@ -16,7 +16,7 @@ public class ovChipkaart
 	this.kaartNummer = kaart; // 2345.6543.9876.9889
 	this.saldo = geld; // 0.96
 	this.geldig = geldig; // nu nog boolean
-	this.benIkInAangemeld = false;
+	this.benIkAangemeld = false;
     }
 
     public boolean getGeldig()
@@ -35,11 +35,9 @@ public class ovChipkaart
     }
 
 
-    public boolean setbenIkInAangemeld()
+    public void setbenIkInAangemeld(boolean benIkAangemeld)
     {
-	return benIkInAangemeld;
+	this.benIkAangemeld = benIkAangemeld;
     }
-
-
 
 }
