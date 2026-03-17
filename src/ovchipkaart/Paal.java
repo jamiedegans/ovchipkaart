@@ -2,9 +2,9 @@ package ovchipkaart;
 
 public class Paal
 {
-   private  double instapTarief = 00.00;
-   private  boolean hebIkGenoegGeld;
-    
+    private double instapTarief = 00.00;
+    private boolean hebIkGenoegGeld;
+
     // =================================================//
     // construcor
     public Paal(double instapTarief)
@@ -14,38 +14,38 @@ public class Paal
 
     // functions
     // =================================================//
-    public void leesKaart(ovChipkaart ovChipkaart)
+    public void leesKaart(OVChipkaart oVChipkaart)
     {
-	if (ovChipkaart.getGeldig() == true)
+	if (oVChipkaart.getGeldig() == true)
 	{
 	    System.out.println("jou kaart is geldig");
-	   
+
 	} else
 	{
 	    System.out.println("jou kaart is niet geldig");
-	    
+
 	}
     }
 
-    public void checkSaldo(ovChipkaart ovChipkaart)
+    private boolean checkSaldo(OVChipkaart oVChipkaart)
     {
-	if (ovChipkaart.getSaldo() <= instapTarief)
+	if (oVChipkaart.getSaldo() <= instapTarief)
 	{
 	    System.out.println("test je mag niet teweining geld");
-	     hebIkGenoegGeld = true;
+	    return false;
 	} else
 	{
 	    System.out.println("test je mag wel genoeng geld");
-	    hebIkGenoegGeld = false;
+	    return true;
 	}
 
     }
-    
-    public void inchecken(ovChipkaart ovChipkaart)
+
+    public void inchecken(OVChipkaart oVChipkaart)
     {
-	if (ovChipkaart.getGeldig() == true && hebIkGenoegGeld == false)
+	if (oVChipkaart.getGeldig() == true && checkSaldo(oVChipkaart))
 	{
-	    ovChipkaart.setSaldo(ovChipkaart.getSaldo() - instapTarief);
+	    oVChipkaart.setSaldo(oVChipkaart.getSaldo() - instapTarief);
 	    System.out.println("test ja");
 	} else
 	{

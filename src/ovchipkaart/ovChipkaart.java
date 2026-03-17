@@ -1,16 +1,14 @@
 package ovchipkaart;
 
-public class ovChipkaart
+public class OVChipkaart
 {
     private int kaartNummer;
     private double saldo;
     private boolean geldig;
     private boolean benIkAangemeld;
     
-    
-
     // Constructor
-    public ovChipkaart(int kaart, double geld, boolean geldig, boolean benIkInAangemeld)
+    public OVChipkaart(int kaart, double geld, boolean geldig, boolean benIkAangemeld)
     {
 
 	this.kaartNummer = kaart; // 2345.6543.9876.9889
@@ -35,9 +33,9 @@ public class ovChipkaart
     }
 
 
-    public void setbenIkInAangemeld(boolean benIkAangemeld)
+    public void setBenIkInAangemeld(boolean benIkAangemeld)
     {
 	this.benIkAangemeld = benIkAangemeld;
     }
-
+    
 }
