@@ -5,7 +5,7 @@ public class OVChipkaart
     private int kaartNummer;
     private double saldo;
     private boolean geldig;
-    private boolean benIkAangemeld;
+    private double InstapLocatie;
     
     // Constructor
     public OVChipkaart(int kaart, double geld, boolean geldig, boolean benIkAangemeld)
@@ -14,7 +14,7 @@ public class OVChipkaart
 	this.kaartNummer = kaart; // 2345.6543.9876.9889
 	this.saldo = geld; // 0.96
 	this.geldig = geldig; // nu nog boolean
-	this.benIkAangemeld = false;
+	this.InstapLocatie = InstapLocatie;
     }
 
     public boolean getGeldig()

@@ -4,12 +4,38 @@ public class Paal
 {
     private double instapTarief = 00.00;
     private boolean hebIkGenoegGeld;
-
-    // =================================================//
+    private double instapKosten = 00.00;
+    private Locatie locatie;
+    // ==================================================//
     // construcor
-    public Paal(double instapTarief)
+    public Paal(double instapTarief, Locatie locatie)
     {
 	this.instapTarief = instapTarief;
+	this.locatie = locatie;
+    }
+    
+    public Paal(double instapTarief, double posX, double posY)
+    {
+	this.instapTarief = instapTarief;
+	this.locatie = new Locatie(posX,posY);
+    }
+    
+    public Paal(Locatie locatie)
+    {
+	this.instapTarief = 20;
+	this.locatie = locatie;
+    }
+    
+    public Paal(double posX, double posY)
+    {
+	this.instapTarief = 20;
+	this.locatie = new Locatie(posX,posY);
+    }
+
+    // functions
+    public void setinstapKosten(double instapKosten)
+    {
+	this.instapKosten = instapKosten;
     }
 
     // functions
@@ -31,25 +57,29 @@ public class Paal
     {
 	if (oVChipkaart.getSaldo() <= instapTarief)
 	{
-	    System.out.println("test je mag niet teweining geld");
+	    System.out.println("test geen saldo");
 	    return false;
 	} else
 	{
-	    System.out.println("test je mag wel genoeng geld");
+	    System.out.println("test genoeg saldo");
 	    return true;
 	}
 
     }
 
-    public void inchecken(OVChipkaart oVChipkaart)
+    public double inchecken(OVChipkaart oVChipkaart)
     {
 	if (oVChipkaart.getGeldig() == true && checkSaldo(oVChipkaart))
 	{
-	    oVChipkaart.setSaldo(oVChipkaart.getSaldo() - instapTarief);
-	    System.out.println("test ja");
+	   this.instapKosten = oVChipkaart.setSaldo(oVChipkaart.getSaldo() - instapTarief);
+	    System.out.println("ingecheckt");
 	} else
 	{
-	    System.out.println("test geen geld");
+	    System.out.println("test teweining saldo");
 	}
+	
+	
+	
+	
     }
 }
