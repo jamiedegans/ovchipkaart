@@ -8,7 +8,7 @@ public class OVChipkaart
     private double InstapLocatie;
     
     // Constructor
-    public OVChipkaart(int kaart, double geld, boolean geldig, boolean benIkAangemeld)
+    public OVChipkaart(int kaart, double geld, boolean geldig)
     {
 
 	this.kaartNummer = kaart; // 2345.6543.9876.9889
@@ -27,15 +27,20 @@ public class OVChipkaart
 	return saldo;
     }
     
-    public void setSaldo(double setSaldo)
+    public double setSaldo(double setSaldo)
     {
-	this.saldo = setSaldo;
+	return this.saldo = setSaldo;
     }
 
-
-    public void setBenIkInAangemeld(boolean benIkAangemeld)
+    public double getInstapLocatie()
     {
-	this.benIkAangemeld = benIkAangemeld;
+	return InstapLocatie;
     }
+    
+    public double setInstapLocatie(double InstapLocatie)
+    {
+	return this.InstapLocatie = InstapLocatie;
+    }
+
     
 }
