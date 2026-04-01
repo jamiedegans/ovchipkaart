@@ -9,28 +9,17 @@ public class Paal
 
     // ==================================================//
     // construcor
+
     public Paal(double instapTarief, Locatie locatie)
     {
 	this.instapTarief = instapTarief;
 	this.locatie = locatie;
     }
 
-    public Paal(double instapTarief, double posX, double posY)
-    {
-	this.instapTarief = instapTarief;
-	this.locatie = new Locatie(posX, posY);
-    }
-
     public Paal(Locatie locatie)
     {
 	this.instapTarief = 20;
 	this.locatie = locatie;
-    }
-
-    public Paal(double posX, double posY)
-    {
-	this.instapTarief = 20;
-	this.locatie = new Locatie(posX, posY, "Arnehm");
     }
 
     public void setinstapKosten(double instapKosten)
@@ -72,15 +61,13 @@ public class Paal
 	if (oVChipkaart.getGeldig() == true && checkSaldo(oVChipkaart))
 	{
 	    
-	    System.out.println("de instapkosten zijn " + (instapTarief) +" dit gaat van jouw saldo huidege " + (oVChipkaart.getSaldo()));
+	    System.out.println("de instapkosten zijn " + (instapTarief) +" dit gaat van jouw saldo huidige " + (oVChipkaart.getSaldo()));
 	    
 	    System.out.println("jouw nieuwe saldo is " + (this.instapKosten = oVChipkaart.setSaldo(oVChipkaart.getSaldo() - instapTarief)));
 	    
-	    
-	    
 	  System.out.println("je bent in gecheckt met je ov kaart op ");
 	  
-	    oVChipkaart.setInstapLocatie(locatie.setposX(70));// moet de double van de huidge locatie
+	    oVChipkaart.setInstapLocatie(locatie);// moet de double van de huidge locatie
 
 	} else
 	{

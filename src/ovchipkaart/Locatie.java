@@ -5,15 +5,15 @@ public class Locatie
 
     private double posX;
     private double posY;
-    private String naam;
+    
 
     // ================================================== //
-    // construcor
-    public Locatie(double posX, double posY, String naam)
+    // con strucor
+    public Locatie(double posX, double posY, String string)
     {
 	this.posX = posX;
 	this.posY = posY;
-
+	
     }
 
     // functions
