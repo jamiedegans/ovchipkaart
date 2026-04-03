@@ -5,14 +5,16 @@ public class Locatie
 
     private double posX;
     private double posY;
+    private String naam;
     
 
     // ================================================== //
     // con strucor
-    public Locatie(double posX, double posY, String string)
+    public Locatie(double posX, double posY, String naam)
     {
 	this.posX = posX;
 	this.posY = posY;
+	this.naam = naam;
 	
     }
 
@@ -35,5 +37,10 @@ public class Locatie
     {
 	return this.posY = posY;
     }
+    
+    public String getNaam() 
+    {
+	    return naam;
+	}
 
 }

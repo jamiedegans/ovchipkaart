@@ -6,6 +6,11 @@ public class Paal
     private boolean hebIkGenoegGeld;
     private double instapKosten = 00.00;
     private Locatie locatie;
+    private double afstand;
+    private double prijsPerKm = 1.34;
+    private double ritKosten;
+    private double saldoNaBorg;
+    private double eindSaldo;
 
     // ==================================================//
     // construcor
@@ -14,11 +19,12 @@ public class Paal
     {
 	this.instapTarief = instapTarief;
 	this.locatie = locatie;
+//	this.prijsPerKm= prijsPerKm; double prijsPerKm
+
     }
 
     public Paal(Locatie locatie)
     {
-	this.instapTarief = 20;
 	this.locatie = locatie;
     }
 
@@ -60,19 +66,45 @@ public class Paal
     {
 	if (oVChipkaart.getGeldig() == true && checkSaldo(oVChipkaart))
 	{
-	    
-	    System.out.println("de instapkosten zijn " + (instapTarief) +" dit gaat van jouw saldo huidige " + (oVChipkaart.getSaldo()));
-	    
-	    System.out.println("jouw nieuwe saldo is " + (this.instapKosten = oVChipkaart.setSaldo(oVChipkaart.getSaldo() - instapTarief)));
-	    
-	  System.out.println("je bent in gecheckt met je ov kaart op ");
-	  
+
+	    System.out.println("de instapkosten zijn " + (instapTarief) + " dit gaat van jouw saldo huidige "
+		    + (oVChipkaart.getSaldo()));
+
+	    System.out.println("jouw nieuwe saldo is "
+		    + (this.instapKosten = oVChipkaart.setSaldo(oVChipkaart.getSaldo() - instapTarief)));
+
 	    oVChipkaart.setInstapLocatie(locatie);// moet de double van de huidge locatie
+
+	    System.out.println("je bent in gecheckt met je ov kaart op " + oVChipkaart.getInstapLocatie().getNaam());
 
 	} else
 	{
-	    System.out.println("test teweining saldo");
+	    System.out.println("test te weining saldo");
 	}
 
+    }
+
+    public void uitchecken(OVChipkaart oVChipkaart)
+    {
+	if (oVChipkaart.getInstapLocatie() == null)
+	{
+	    System.out.println("je bent niet ingecheckt");
+	    return;
+	}
+
+	Locatie begin = oVChipkaart.getInstapLocatie();
+	Locatie eind = this.locatie;
+
+	afstand = begin.afstandUitrekenen(eind);
+
+	ritKosten = afstand * prijsPerKm;
+
+	oVChipkaart.setSaldo(oVChipkaart.getSaldo() - ritKosten);
+	oVChipkaart.setInstapLocatie(null);
+
+	System.out.println("afstand gereisd " + afstand);
+	System.out.println("ritkosten " + ritKosten);
+	System.out.println("nieuw saldo " + oVChipkaart.getSaldo());
+	System.out.println("je bent uitgecheckt op " + eind.getNaam());
     }
 }

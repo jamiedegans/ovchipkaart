@@ -6,6 +6,7 @@ public class OVChipkaart
     private double saldo;
     private boolean geldig;
     private Locatie instapLocatie;
+    
 
     // Constructor
     public OVChipkaart(int kaart, double geld, boolean geldig)
