@@ -7,10 +7,11 @@ public class Paal
     private double instapKosten = 00.00;
     private Locatie locatie;
     private double afstand;
-    private double prijsPerKm = 1.34;
+    private double prijsPerKm = 1.34; 
     private double ritKosten;
-    private double saldoNaBorg;
     private double eindSaldo;
+    private double begin;
+    private double eind;
 
     // ==================================================//
     // construcor
@@ -19,7 +20,6 @@ public class Paal
     {
 	this.instapTarief = instapTarief;
 	this.locatie = locatie;
-//	this.prijsPerKm= prijsPerKm; double prijsPerKm
 
     }
 
@@ -52,11 +52,11 @@ public class Paal
     {
 	if (oVChipkaart.getSaldo() <= instapTarief)
 	{
-	    System.out.println("test geen saldo");
+	    System.out.println("jij hebt niet genoeg saldo stort meer geld");
 	    return false;
 	} else
 	{
-	    System.out.println("test genoeg saldo");
+	    System.out.println("jij hebt genoeng saldo");
 	    return true;
 	}
 
@@ -79,7 +79,7 @@ public class Paal
 
 	} else
 	{
-	    System.out.println("test te weining saldo");
+	    System.out.println("je kan niet inchecken probeer opnieuw");
 	}
 
     }
@@ -102,7 +102,7 @@ public class Paal
 	oVChipkaart.setSaldo(oVChipkaart.getSaldo() - ritKosten);
 	oVChipkaart.setInstapLocatie(null);
 
-	System.out.println("afstand gereisd " + afstand);
+	System.out.println("afstand gereisd " + afstand + "km");
 	System.out.println("ritkosten " + ritKosten);
 	System.out.println("nieuw saldo " + oVChipkaart.getSaldo());
 	System.out.println("je bent uitgecheckt op " + eind.getNaam());
