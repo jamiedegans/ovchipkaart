@@ -21,15 +21,15 @@ public class OVChipkaart
     {
 	return geldig;
     }
-
-    public double getSaldo()
-    {
-	return saldo;
-    }
-
+  
     public double setSaldo(double setSaldo)
     {
 	return this.saldo = setSaldo;
+    }
+    
+  public double getSaldo()
+    {
+	return saldo;
     }
 
     public Locatie getInstapLocatie()
