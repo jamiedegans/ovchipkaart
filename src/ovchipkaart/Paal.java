@@ -39,7 +39,7 @@ public class Paal
     {
 	if (oVChipkaart.getGeldig() == true)
 	{
-	    System.out.println("jou kaart is geldig");
+	    System.out.println("Uw kaart is geldig.");
 
 	} else
 	{
@@ -52,11 +52,11 @@ public class Paal
     {
 	if (oVChipkaart.getSaldo() <= instapTarief)
 	{
-	    System.out.println("jij hebt niet genoeg saldo stort meer geld");
+	    System.out.println("Onvoldoende saldo. Laad uw kaart op");
 	    return false;
 	} else
 	{
-	    System.out.println("jij hebt genoeng saldo");
+	    System.out.println("Voldoende saldo beschikbaar.");
 	    return true;
 	}
 
@@ -67,7 +67,7 @@ public class Paal
 	if (oVChipkaart.getGeldig() == true && checkSaldo(oVChipkaart))
 	{
 
-	    System.out.println("de instapkosten zijn " + (instapTarief) + " dit gaat van jouw saldo huidige "
+	    System.out.println("de instapkosten zijn € " + (instapTarief) + " dit gaat van jouw saldo huidige "
 		    + (oVChipkaart.getSaldo()));
 
 	    System.out.println("jouw nieuwe saldo is "
@@ -79,7 +79,7 @@ public class Paal
 
 	} else
 	{
-	    System.out.println("je kan niet inchecken probeer opnieuw");
+	    System.out.println("Inchecken mislukt.");
 	}
 
     }
@@ -88,7 +88,7 @@ public class Paal
     {
 	if (oVChipkaart.getInstapLocatie() == null)
 	{
-	    System.out.println("je bent niet ingecheckt");
+	    System.out.println("Uitchecken niet mogelijk: u bent niet ingecheckt.");
 	    return;
 	}
 

@@ -24,6 +24,11 @@ public class Driver
 	
 	laadLocatie.aanvullenMet(50.20);
 	
+	laadLocatie.stop();
+	
+	laadLocatie.aanvullenMet(80.00);
+	
+	
 //	Paal paalTreinAmsterdam = new Paal(20.00, amsterdam);
 //	Paal paalTreinArhem = new Paal(arnhem);
 //	Paal paalBus = new Paal(arnhem);

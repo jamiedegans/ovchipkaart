@@ -18,17 +18,17 @@ public class NSAutomaat
     {
 	if (isDeMachineBezet == true)
 	{
-	    System.out.println("je huidige saldo is" + oVChipkaart.getSaldo());
+	    System.out.println("huidige saldo € " + oVChipkaart.getSaldo());
 	    stortBedrag = HetBedragTeBehalen - oVChipkaart.getSaldo();
 	    oVChipkaart.setSaldo(HetBedragTeBehalen);
 
-	    System.out.println("jij wilt het hebben tot " + HetBedragTeBehalen);
+	    System.out.println("bijgestort bedrag € " + HetBedragTeBehalen);
 
-	    System.out.println("nieuw saldo is " + oVChipkaart.getSaldo());
+	    System.out.println("nieuw saldo € " + oVChipkaart.getSaldo());
 
 	} else
 	{
-	    System.out.println("de machine is nog bezet");
+	    System.out.println("Geen OV-chipkaart gedetecteerd. Scan eerst uw kaart.");
 	}
     }
 
@@ -39,7 +39,7 @@ public class NSAutomaat
 	    System.out.println(oVChipkaart.setSaldo(oVChipkaart.getSaldo() + HetBedragErBij));
 
 	} else{
-	    System.out.println("de machine is nog bezet");
+	    System.out.println("Geen OV-chipkaart gedetecteerd. Scan eerst uw kaart.");
 	}
     }
 	
@@ -51,9 +51,10 @@ public class NSAutomaat
 		    
 		    oVChipkaart = null;
 		    isDeMachineBezet = false;
+		    System.out.println("Sessie beëindigd.");
 		} else
 		{
-		    System.out.println("de machine was nooit bezet");
+		    System.out.println("Er is geen actieve sessie om te beëindigen.");
 		}
 
     }
