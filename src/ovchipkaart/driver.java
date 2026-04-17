@@ -12,20 +12,29 @@ public class Driver
 	Locatie middelbrug = new Locatie (1.00, 2.50, "middelbrug");
 	Locatie deHague = new Locatie (2.00, 4.00, "De Hague");
 	
-	
-	
 //	arnhem.afstandUitrekenen(amsterdam);
 	// de paal en kaaarten
-	OVChipkaart ovChipkaart = new OVChipkaart(1909, 500.00, true);
+	OVChipkaart ovChipkaart = new OVChipkaart(1909, 50.00, true);
 	
-	Paal paalTreinAmsterdam = new Paal(20.00, amsterdam);
-	Paal paalTreinArhem = new Paal(arnhem);
 	
-	Paal paalBus = new Paal(arnhem);
-
-	 paalTreinAmsterdam.leesKaart(ovChipkaart); // is je kaart wel of niet legaal
-	 paalTreinAmsterdam.inchecken(ovChipkaart); // zet je in de ov systeem
-	 paalTreinArhem.uitchecken(ovChipkaart);
+	
+	NSAutomaat laadLocatie= new NSAutomaat();
+	
+	laadLocatie.scan(ovChipkaart);
+	
+	laadLocatie.aanvullenMet(50.20);
+	
+//	Paal paalTreinAmsterdam = new Paal(20.00, amsterdam);
+//	Paal paalTreinArhem = new Paal(arnhem);
+//	Paal paalBus = new Paal(arnhem);
+//	
+//	
+//
+////	 paalTreinAmsterdam.leesKaart(ovChipkaart); // is je kaart wel of niet legaal
+////	 paalTreinAmsterdam.inchecken(ovChipkaart); // zet je in de ov systeem
+////	 paalTreinArhem.uitchecken(ovChipkaart);
+	
+	
 	System.out.println("=====================<bus hier onder>========================");
 
 
