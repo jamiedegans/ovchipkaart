@@ -3,15 +3,10 @@ package ovchipkaart;
 public class Paal
 {
     private double instapTarief = 00.00;
-    private boolean hebIkGenoegGeld;
-    private double instapKosten = 00.00;
     private Locatie locatie;
-    private double afstand;
     private double prijsPerKm = 1.34; 
     private double ritKosten;
-    private double eindSaldo;
-    private double begin;
-    private double eind;
+ 
 
     // ==================================================//
     // construcor
@@ -26,11 +21,6 @@ public class Paal
     public Paal(Locatie locatie)
     {
 	this.locatie = locatie;
-    }
-
-    public void setinstapKosten(double instapKosten)
-    {
-	this.instapKosten = instapKosten;
     }
 
     // functions
@@ -69,11 +59,11 @@ public class Paal
 
 	    System.out.println("de instapkosten zijn € " + (instapTarief) + " dit gaat van jouw saldo huidige "
 		    + (oVChipkaart.getSaldo()));
+	    
+	    oVChipkaart.inchecken(this.instapTarief, this.locatie);
 
-	    System.out.println("jouw nieuwe saldo is "
-		    + (this.instapKosten = oVChipkaart.setSaldo(oVChipkaart.getSaldo() - instapTarief)));
-
-	    oVChipkaart.setInstapLocatie(locatie);// moet de double van de huidge locatie
+	    System.out.println("jouw nieuwe saldo is " + oVChipkaart.getSaldo());
+	   // oVChipkaart.setInstapLocatie(locatie);// moet de double van de huidge locatie
 
 	    System.out.println("je bent in gecheckt met je ov kaart op " + oVChipkaart.getInstapLocatie().getNaam());
 
@@ -95,13 +85,13 @@ public class Paal
 	Locatie begin = oVChipkaart.getInstapLocatie();
 	Locatie eind = this.locatie;
 
-	afstand = begin.afstandUitrekenen(eind);
+	double afstand = begin.afstandUitrekenen(eind);
 
 	ritKosten = afstand * prijsPerKm;
 
-	oVChipkaart.setSaldo(oVChipkaart.getSaldo() - ritKosten);
-	oVChipkaart.setInstapLocatie(null);
-
+	oVChipkaart.uitchecken(ritKosten);
+	
+	
 	System.out.println("afstand gereisd " + afstand + "km");
 	System.out.println("ritkosten " + ritKosten);
 	System.out.println("nieuw saldo " + oVChipkaart.getSaldo());

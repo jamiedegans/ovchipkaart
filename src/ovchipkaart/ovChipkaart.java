@@ -6,7 +6,6 @@ public class OVChipkaart
     private double saldo;
     private boolean geldig;
     private Locatie instapLocatie;
-    
 
     // Constructor
     public OVChipkaart(int kaart, double geld, boolean geldig)
@@ -21,13 +20,13 @@ public class OVChipkaart
     {
 	return geldig;
     }
-  
-    public double setSaldo(double setSaldo)
+
+    public void setSaldo(double setSaldo)
     {
-	return this.saldo = setSaldo;
+	this.saldo = setSaldo;
     }
-    
-  public double getSaldo()
+
+    public double getSaldo()
     {
 	return saldo;
     }
@@ -37,9 +36,17 @@ public class OVChipkaart
 	return instapLocatie;
     }
 
-    public void setInstapLocatie(Locatie locatie)
+    public void inchecken(double instapTarief, Locatie locatie)
     {
-	instapLocatie = locatie;
-    }
+	this.saldo -= instapTarief;
+	this.instapLocatie = locatie;
 
+    }
+    
+    public void uitchecken(double ritKosten)
+    {
+	this.saldo -= ritKosten;
+	this.instapLocatie = null;
+
+    }
 }
